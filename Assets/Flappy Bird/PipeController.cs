@@ -10,7 +10,7 @@ public class PipeController : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating("SetPooled", .5f, 1.1f);
+        InvokeRepeating("SetPooled", .5f, 1.7f);
     }
 
     private void Update()
@@ -22,10 +22,16 @@ public class PipeController : MonoBehaviour
         var bullet = ObjectPooled.sharedInstance.GetPooled();
 
         if(bullet != null){
-            bullet.transform.position = transform.position;
+            bullet.transform.position = RandPost();
             bullet.transform.rotation = transform.rotation;
             bullet.SetActive(true);
         }
+    }
+
+    private Vector3 RandPost() {
+        var randTime = Random.Range(-3, 0.1f);
+        Debug.Log("Random Post");
+        return new Vector3(transform.position.x, randTime, transform.position.z);
     }
 
     private void PointGame() {

@@ -26,7 +26,7 @@ public class PlayerUnity : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag == "pipe")
+        if(other.gameObject.CompareTag("pipe"))
             controller.point++;
     }
 }
