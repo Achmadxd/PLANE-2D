@@ -34,7 +34,9 @@ public class PlayerUnity : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.CompareTag("enemy"))
+        if(other.gameObject.CompareTag("enemy")){
             controller.StopMovePipe();
+            Destroy(GetComponent<Animator>());
+        }
     }
 }

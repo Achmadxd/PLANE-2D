@@ -32,6 +32,7 @@ public class PipeController : MonoBehaviour
             item.GetComponent<PipeMove>().isMove = false;
 
         CancelInvoke("SetPooled");
+        Destroy(GameObject.Find("Ground").GetComponent<Animator>());
     }
 
     private Vector3 RandPost() {
